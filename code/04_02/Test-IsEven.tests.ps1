@@ -6,6 +6,6 @@ Describe "Test-IsEven" {
     
     It "returns $false for odd numbers" {
         Test-IsEven -Number 3 | Should -Be $false
-        Test-IsEven -Number 4 | Should -BeOfType [System.Boolean]
+        Test-IsEven -Number 3 | Should -BeOfType [System.Boolean]
     }
 }
