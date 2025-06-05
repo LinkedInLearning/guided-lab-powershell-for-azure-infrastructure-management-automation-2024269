@@ -1,0 +1,9 @@
+{
+    "TenantId":"f98042ad-9bbc-499d-adb4-17193696b9a3",
+    "Location": "UKSouth",
+    "AppServiceName": "linkedinpwsh",
+    "Environment": "prod",
+    "Number": "001",
+    "StorageSku":"Standard_LRS"
+  }
+  
