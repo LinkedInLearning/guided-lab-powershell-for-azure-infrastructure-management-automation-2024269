@@ -1,0 +1,36 @@
+name: Run Pester Tests
+
+on:
+  push:
+    branches:
+      - 04-06
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          enable-AzPSSession: true
+
+      - name: Install PowerShell Modules
+        shell: pwsh
+        run: Install-Module Pester, Az.Resources -Force -Scope CurrentUser
+      
+      - name: Run tests
+        shell: pwsh
+        run: |
+          Set-Location .\code\04_06
+
+          # import the config
+          $config = Get-Content .\config.json | ConvertFrom-Json
+
+          # get the resource groups
+          $rgs = Get-AzResourceGroup | Where-Object ResourceGroupName -like 'rg-linkedinpwsh-prod*'
+
+          # Call a folder of Pester tests with the data passed in
+          $container = New-PesterContainer -Path .\Tests -Data @{ config = $config; rgs = $rgs }
+          Invoke-Pester -Container $container -Output Detailed
