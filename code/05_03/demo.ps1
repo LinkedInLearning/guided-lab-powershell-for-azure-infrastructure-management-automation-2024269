@@ -9,7 +9,7 @@ Set-Location -Path .\code\05_03
         AutoSize = $true
         WorksheetName = "Processes"
         TableName = "ProcessData"
-        TableStyle = "Medium5"
+        TableStyle = "Medium4"
     }
     $processes | Export-Excel @excelParams
 
