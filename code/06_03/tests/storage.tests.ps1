@@ -8,8 +8,7 @@ param (
 
 Describe "Azure Storage Account: <_.Name>" -ForEach $data {
     BeforeAll {
-        $str = Get-AzStorageAccount -ResourceGroupName $rgName -Name $_.Name
-        $str | ogv
+        $str = Get-AzStorageAccount -ResourceGroupName $rgName -Name $_.Name.ToLower()
         if($_.Properties) {
             $properties = $_.Properties.split(';').foreach{
                 [PSCustomObject]@{
@@ -21,7 +20,7 @@ Describe "Azure Storage Account: <_.Name>" -ForEach $data {
     }
 
     It "storage account should exist" {
-        $str | Should -Not -BeNullOrEmpty
+        $str.StorageAccountName | Should -Not -BeNullOrEmpty
     }
     It "storage account should be in correct location" {
         $str.PrimaryLocation | Should -Be $_.Location

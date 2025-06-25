@@ -14,7 +14,6 @@ $data.foreach{
             Write-Output ("Testing Storage Account: {0} in Resource Group: {1}" -f $resource.Name, $resourceGroup)
             $container = New-PesterContainer -Path .\tests\storage.tests.ps1 -Data @{ data = $resource; rgName = $resourceGroup }
             Invoke-Pester -Container $container -Output Detailed        
-            
         }
         # 'Key Vault' {
         #     $keyVaultParams = @{
