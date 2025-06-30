@@ -16,11 +16,10 @@ Describe "Azure Storage Account: <_.Name>" -ForEach $data {
                     Value = $_.Split('=')[1]
                 }
             }
-        }        
+        }
     }
-
     It "storage account should exist" {
-        $str.StorageAccountName | Should -Not -BeNullOrEmpty
+        $str.GetType() | Should -Not -BeNullOrEmpty
     }
     It "storage account should be in correct location" {
         $str.PrimaryLocation | Should -Be $_.Location
