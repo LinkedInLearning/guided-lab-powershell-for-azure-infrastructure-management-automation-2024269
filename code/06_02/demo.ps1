@@ -5,13 +5,14 @@ $data.foreach{
         'Resource Group' {
             Write-Output ("Creating Resource Group: {0} in Location: {1}" -f $resource.Name, $resource.Location)
             $resourceGroup = $resource.Name
-            New-AzResourceGroup -Name $resource.Name -Location $resource.Location
+            New-AzResourceGroup -Name $resource.Name -Location $resource.Location -Tag $tag
         }
         'Storage Account' {
             $storageParams = @{
                 Name                 = $resource.Name.ToLower()
                 ResourceGroupName    = $resourceGroup
                 Location             = $resource.Location
+                Tag                  = $tag
             }
             Write-Output ("Creating Storage Account: {0} in Resource Group: {1}" -f $resource.Name, $resourceGroup)
             if($resource.Properties) {
@@ -29,6 +30,7 @@ $data.foreach{
                 Name                 = $resource.Name
                 ResourceGroupName    = $resourceGroup
                 Location             = $resource.Location
+                Tag                  = $tag
             }
             Write-Output $resource.Name
             if($resource.Properties) {
@@ -38,6 +40,7 @@ $data.foreach{
                 }
             }
             Write-Output ("Creating Key Vault: {0} in Resource Group: {1}" -f $resource.Name, $resourceGroup)
+            #TODO: this got created in wrong rg?
             $kv = New-AzKeyVault @keyVaultParams
             Write-Output ("Key Vault created with URI: {0}" -f $kv.VaultUri)
         }
