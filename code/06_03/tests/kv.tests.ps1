@@ -23,7 +23,7 @@ Describe "Azure Key Vault: <_.Name>" -ForEach $data {
         $kv.GetType() | Should -Not -BeNullOrEmpty
     }
     It "key vault should be in correct location" {
-        $kv.PrimaryLocation | Should -Be $_.Location
+        $kv.Location | Should -Be $_.Location
     }
 }
 

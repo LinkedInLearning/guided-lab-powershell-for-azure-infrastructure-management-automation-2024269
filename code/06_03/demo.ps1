@@ -24,5 +24,5 @@ $data.foreach{
 }
 
 # run generic tests
-$container = New-PesterContainer -Path .\tests\generic.tests.ps1 -Data @{ rgName = $resourceGroup }
+$container = New-PesterContainer -Path .\tests\generic.tests.ps1 -Data @{ rgName = $resourceGroup; tag = $tag.Keys }
 Invoke-Pester -Container $container -Output Detailed
