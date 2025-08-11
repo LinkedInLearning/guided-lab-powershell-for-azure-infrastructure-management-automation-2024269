@@ -5,6 +5,8 @@ This is the repository for the LinkedIn Learning course `Guided Lab: PowerShell 
 
 ## Course Description
 
+Are you just getting started on your journey as an IT professional working with PowerShell? In this hands-on project-based course, join Microsoft MVP Jess Pomfret as she outlines essential PowerShell skills for creating and managing infrastructure in Azure. Discover what PowerShell is and why it's so important in an IT professional’s toolbelt. Along the way, Jess demonstrates how to test with Pester and generate documentation with ImportExcel to deliver comprehensive infrastructure management solutions. As you progress throughout the course, you’ll get a chance to build your own project and practice your new PowerShell skills.
+
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
@@ -24,25 +26,18 @@ To resolve this issue:
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
-## Installing
-1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
-2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
 
 ## Instructor
 
-Instructor name
+Jess Pomfret
 
-Instructor description
+Database Platform Architect and Microsoft MVP
+              
 
-                            
-
-Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/).
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/jess-pomfret?u=104).
 
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQG0eDHsyOSqTA/learning-public-crop_675_1200/B4EZVdqqdwHUAY-/0/1741033220778?e=2147483647&v=beta&t=FxUDo6FA8W8CiFROwqfZKL_mzQhYx9loYLfjN-LNjgA
-
+[lil-course-url]: https://www.linkedin.com/learning/guided-lab-automating-azure-infrastructure-management-with-powershell
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D560DAQEBVCkusLDoKg/learning-public-crop_675_1200/B56ZiBg9waG4AY-/0/1754519559915?e=2147483647&v=beta&t=vsKLMZcbCPnIyqiNOOVTN9htAMs70qRW8WWFQa6voh8
